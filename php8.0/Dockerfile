@@ -18,9 +18,9 @@ RUN set -ex; \
 RUN phpenmod curl pdo pdo_mysql xml gd zip opcache mbstring posix ctype iconv pcntl openssl
 
 RUN set -ex; \
-        curl -O -L https://phar.phpunit.de/phpunit-9.4.4.phar; \
-        chmod +x phpunit-9.4.4.phar; \
-        mv phpunit-9.4.4.phar /usr/local/bin/phpunit;
+        curl -O -L https://phar.phpunit.de/phpunit-8.phar; \
+        chmod +x phpunit-8.phar; \
+        mv phpunit-8.phar /usr/local/bin/phpunit;
 RUN set -ex; \
         curl -O -L https://getcomposer.org/download/1.10.15/composer.phar; \
         chmod +x composer.phar; \

@@ -8,10 +8,10 @@ RUN set -ex; \
         wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg; \
         echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list; \
         apt-get update; \
-        DEBIAN_FRONTEND=noninteractive apt-get install -q -y php7.3-gd git curl openssl \
-        php7.3-cli php7.3-curl php7.3-mysql wget make \
-        php7.3-redis php7.3-memcached php7.3-memcache php7.3-json \
-        php7.3-apcu php7.3-xdebug php7.3-xml php7.3-zip php7.3-dev php7.3-mbstring; \
+        DEBIAN_FRONTEND=noninteractive apt-get install -q -y php7.4-gd git curl openssl \
+        php7.4-cli php7.4-curl php7.4-mysql wget make \
+        php7.4-redis php7.4-memcached php7.4-memcache php7.4-json \
+        php7.4-apcu php7.4-xdebug php7.4-xml php7.4-zip php7.4-dev php7.4-mbstring; \
         apt-get autoremove -y; apt-get autoclean; apt-get clean; \
         rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*;
 
@@ -27,4 +27,4 @@ RUN set -ex; \
         mv composer.phar /usr/local/bin/composer;
 
 RUN phpdismod xdebug
-ADD php.ini /etc/php/7.3/cli/conf.d/friendica.ini
+ADD php.ini /etc/php/7.4/cli/conf.d/friendica.ini

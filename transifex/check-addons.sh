@@ -13,5 +13,5 @@ if [[ $(git diff -U0 **/messages.po | grep -vE '^(@@|\-"POT-Creation-Date|\+"POT
 	echo "$(git diff **/messages.po)"
 	exit 1
 else
-	echo "Nothing to update"
+	echo "\033[1mNothing to update\033[0m"
 fi

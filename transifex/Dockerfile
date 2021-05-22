@@ -8,3 +8,5 @@ RUN apt-get update -q && \
     && rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
 
 COPY check-messages.sh /check-messages.sh
+COPY check-addons.sh /check-addons.sh
+COPY xgettext-addon.sh /xgettext-addon.sh

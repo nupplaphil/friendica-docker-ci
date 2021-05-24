@@ -9,5 +9,5 @@ if [[ $(git diff -U0 ./view/lang/C/messages.po | grep -vE '^(@@|\-"POT-Creation-
 	echo "$(git diff ./view/lang/C/messages.po)"
 	exit 1
 else
-	echo "Nothing to update"
+	echo "\033[1mNothing to update\033[0m"
 fi

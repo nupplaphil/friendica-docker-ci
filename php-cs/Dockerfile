@@ -1,4 +1,4 @@
-FROM php:7.2
+FROM php:7.4
 
 RUN apt-get update -q && \
     DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
@@ -7,3 +7,4 @@ RUN apt-get update -q && \
     && rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
 
 COPY check-php-cs.sh /check-php-cs.sh
+COPY check-license.sh /check-license.sh

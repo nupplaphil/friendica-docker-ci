@@ -16,6 +16,9 @@ exitVal=0
 printf "\n"
 
 for file in "${files[@]}"; do
+  if [ ! -f "$file" ]; then
+    continue
+  fi
 	php_license_md5=$(head -n "$php_template_rows" "$file" | md5sum)
 	[[ "$php_template_md5" != "$php_license_md5" ]] && printf " - %s\n" "$file" && exitVal=1
 done

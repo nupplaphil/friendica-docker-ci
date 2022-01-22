@@ -16,7 +16,7 @@ exitVal=0
 printf "\n"
 
 for file in "${files[@]}"; do
-  if [ ! -f "$file" ]; then
+  if [ ! -f "$file" ] || [[ "$file" == *strings.php ]]; then
     continue
   fi
 	php_license_md5=$(head -n "$php_template_rows" "$file" | md5sum)

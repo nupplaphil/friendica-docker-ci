@@ -9,7 +9,7 @@ RUN set -eux; \
             perl-utils \
     	; \
 # verify the signature
-	export GNUPGHOME="$(mktemp -d)"; \
+    export GNUPGHOME="$(mktemp -d)"; \
     curl https://keybase.io/codecovsecurity/pgp_keys.asc | gpg --no-default-keyring --keyring trustedkeys.gpg --import; \
     curl -Os https://uploader.codecov.io/latest/alpine/codecov; \
     curl -Os https://uploader.codecov.io/latest/alpine/codecov.SHA256SUM; \
@@ -20,6 +20,6 @@ RUN set -eux; \
     rm -rf "$GNUPGHOME" codecov.SHA256SUM codecov.SHA256SUM.sig; \
     mv codecov /usr/local/bin/codecov; \
 # clean up fetch dependencies
-	apk del --no-network .gosu-deps; \
+    apk del --no-network .gosu-deps; \
     chmod +x /usr/local/bin/codecov; \
     codecov --version;

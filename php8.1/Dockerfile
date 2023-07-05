@@ -15,7 +15,7 @@ RUN set -ex; \
         apt-get autoremove -y; apt-get autoclean; apt-get clean; \
         rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*;
 
-RUN phpenmod curl pdo pdo_mysql xml gd zip opcache mbstring posix ctype iconv pcntl openssl
+RUN phpenmod curl pdo pdo_mysql xml gd zip opcache mbstring posix ctype iconv
 
 RUN set -ex; \
         curl -O -L https://phar.phpunit.de/phpunit-9.phar; \

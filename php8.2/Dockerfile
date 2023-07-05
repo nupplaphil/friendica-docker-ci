@@ -8,10 +8,10 @@ RUN set -ex; \
         wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg; \
         echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list; \
         apt-get update; \
-        DEBIAN_FRONTEND=noninteractive apt-get install -q -y php8.0-gd git curl openssl \
-        php8.0-cli php8.0-curl php8.0-mysql wget make \
-        php8.0-redis php8.0-memcached php8.0-memcache \
-        php8.0-apcu php8.0-xdebug php8.0-xml php8.0-zip php8.0-dev php8.0-mbstring; \
+        DEBIAN_FRONTEND=noninteractive apt-get install -q -y php8.2-gd git curl openssl \
+        php8.2-cli php8.2-curl php8.2-mysql wget make \
+        php8.2-redis php8.2-memcached php8.2-memcache \
+        php8.2-apcu php8.2-xdebug php8.2-xml php8.2-zip php8.2-dev php8.2-mbstring; \
         apt-get autoremove -y; apt-get autoclean; apt-get clean; \
         rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*;
 
@@ -27,4 +27,4 @@ RUN set -ex; \
         mv composer.phar /usr/local/bin/composer;
 
 RUN phpdismod xdebug
-ADD php.ini /etc/php/8.0/cli/conf.d/friendica.ini
+ADD php.ini /etc/php/8.2/cli/conf.d/friendica.ini

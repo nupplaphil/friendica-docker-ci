@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bookworm
 
 # install the PHP extensions we need
 # see https://friendi.ca/resources/requirements/
